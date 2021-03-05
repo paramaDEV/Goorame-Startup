@@ -9,8 +9,10 @@ if(!isset($_SESSION["status"])){
     exit;
 }
 $idmitra=$_SESSION["idmitra"];
-$data = $conn->selectData("SELECT * FROM mitra,riwayat_mitra WHERE mitra.id=riwayat_mitra.id_mitra AND id_mitra='$idmitra'");
+$data = $conn->selectData("SELECT * FROM mitra WHERE id='$idmitra'");
+$data2 = $conn->selectData("SELECT * FROM riwayat_mitra WHERE id='$idmitra'");
 $bintang=$data[0]["bintang"];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +36,7 @@ $bintang=$data[0]["bintang"];
         <center><?php $conn->showStar($bintang)?></center>
         <div class="menu" style="margin-top:100px;">
             <a href="homeMitra.php"><img src="../assets/home.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Beranda</h4></a>
-            <a href="pesanan.php"><img src="../assets/keranjang.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Pesanan<span style="margin-left:10px;background-color: red;padding:5px;border-radius:10px;">0</span></h4></a>
+            <a href="pesanan.php"><img src="../assets/keranjang.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Pesanan<?=$conn->hitungPesanan($idmitra)?></h4></a>
             <a href=""><img src="../assets/riwayat.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Riwayat</h4></a>
             <a href="komoditi.php"><img src="../assets/komoditi.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Komoditi</h4></a>
             <a href="accountMitra.php"><img src="../assets/account.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Akun</h4></a>
@@ -44,17 +46,17 @@ $bintang=$data[0]["bintang"];
     <div class="content">
         <center><h1 style="margin-top:50px">Riwayat</h1></center>
         <center><table border="0" cellspacing=0 cellpadding=10>
-        <?php
-        $no=1;
-        foreach($data as $x):
         
-        ?>
             <tr>
                 <td>Tanggal</td>
                 <td>Item</td>
                 <td>Jumlah</td>
                 <td>Hasil</td>
             </tr>
+            <?php
+            $no=1;
+            foreach($data2 as $x):
+            ?>
             <tr>
                 <td><?=$x["tanggal"]?></td>
                 <td><?=$x["item"]?></td>

@@ -383,6 +383,26 @@ class Functions{
                 echo "<script>alert('Belanjaan berhasil di checkout !!!')</script>";
             }
     }
+
+    public function hitungKeranjang($id){
+        $data = $this->selectData("SELECT * FROM keranjang WHERE id_user='$id'"); 
+        $jumlah = count($data);
+        if($jumlah>0){
+            return "<span style='margin-left:10px;background-color: red;padding:5px;border-radius:10px;'>$jumlah</span>";
+            exit;
+        }else{
+            return "";
+        }
+    }
+
+    public function hitungPesanan($id){
+        $data = $this->selectData("SELECT * FROM pesanan WHERE id_mitra='$id'"); 
+        $jumlah = count($data);
+        if($jumlah>0){
+            return "<span style='margin-left:10px;background-color: red;padding:5px;border-radius:10px;'>$jumlah</span>";
+            exit;
+        }
+    }
 }
 
 
