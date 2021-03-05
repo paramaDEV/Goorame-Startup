@@ -1,0 +1,115 @@
+html{
+    height: 100%;
+}
+body{
+    margin:0;
+    padding:0;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    background-color: rgb(243, 243, 243);
+}
+.sidebar{
+    width: 15%;
+    height:100%;
+    background-color: rgb(27, 119, 194);
+}
+.content{
+    width:83%;
+    height:95%;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    overflow: scroll;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.menu h4{
+    color:white;
+    font-family:'Roboto',sans-serif;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+}
+
+.menu  a:link{
+    color: white;
+    text-decoration: none;
+}
+
+.menu h4:hover{
+    background-color: rgb(15, 80, 153);
+}
+
+.menu  a:visited{
+    color: white;
+}
+.content h1{
+    font-family: 'Arimo',sans-serif;
+    font-size: 40px;
+}
+
+.content .tagihan{
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.item{
+    width: 95%;
+    padding: 20px;
+    box-sizing: border-box;
+    display:flex ;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(200, 201, 201);
+}
+
+.rincian{
+    width: 71%;
+    box-sizing: border-box;
+    display:flex ;
+    justify-content: space-between;
+}
+
+.rincian h1{
+    font-family: 'Arimo',sans-serif;
+    font-size: 22px;
+    color: rgb(36, 36, 36);
+    font-weight: bolder;
+}
+
+
+.item h1{
+    font-family: 'Arimo',sans-serif;
+    font-size: 25px;
+    color: rgb(36, 36, 36);
+    font-weight: bolder;
+}
+
+.item h4{
+    font-family: 'Roboto',sans-serif;
+}
+
+.level{
+    color:white;font-family:'Roboto',sans-serif;
+    padding: 10px;
+    width: 30%;
+    border-radius: 40px;
+    box-sizing: border-box;
+}
+
+.profile img {
+    border-radius: 50%;
+}
+
+button{
+    border : none;
+    color:white;
+    background-color: rgb(226, 131, 41);
+    padding:15px;
+    border-radius: 20px;
+    cursor: pointer;
+}

@@ -1,0 +1,165 @@
+body{
+    margin:0;
+    padding:0;
+    background-image: linear-gradient(to left, #00c6fb 0%, rgb(18, 100, 207) 100%);
+}
+nav{
+    color: white;
+    height:75px;
+    background-color: rgb(10, 87, 187);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    top:0;
+    right : 0;
+    left : 0;
+    z-index: 99;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content:space-between;
+    flex-direction: row;
+    width : 430px;
+    margin-right: 20px;
+    line-height: 38px;
+    font-family: 'Roboto',sans-serif;
+    font-size: 18px;
+}
+
+nav ul a:link{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+nav ul a:visited{                                                                                                                                                    
+    color: rgb(255, 255, 255);
+}
+
+nav ul a:hover{
+    border-bottom: 4px solid rgb(199, 123, 23);
+}
+
+.sectionA{
+    height : 650px;
+    margin-top : 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    color: white;
+}
+
+ .btn{
+    transition:0.5s;
+    border: none;
+    color: white;
+    background-color: rgb(228, 148, 44);
+    width: 220px;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 20px;
+    margin-top:28px;
+}
+
+.btn:hover{
+    transition:0.5s;
+    width: 240px;
+    height: 60px;
+}
+
+.sectionB{
+    padding: 20px;
+    line-height: 30px;
+    padding-top: 30px;
+    height : 400px;
+    background-color: rgba(14, 93, 196,0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionC{
+    padding-top: 30px;
+    padding-bottom: 50px;
+    display: flex;flex-direction: column;
+    color: white;
+}
+
+.sectionC .wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.sectionC .wrap .box{
+    transition: 0.7s;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 350px;
+    width : 300px;
+    font-family: sans-serif;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    margin:10px;
+    color: rgb(72, 75, 77);
+    box-shadow: 3px 3px 10px rgb(18, 90, 119);
+}
+.sectionC .wrap .box:hover{
+    position: relative;
+    transition: 0.7s;
+    top: -20px;
+}
+
+
+.sectionD{
+    padding-top: 30px;
+    padding-bottom: 60px;
+    background-color: rgba(14, 93, 196,0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionD .wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.sectionD .wrap .box{
+    width:400px;
+    height: 150px;
+    margin : 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.sectionD .wrap .box img{
+    margin-top: 20px;
+    border-radius: 50%;
+}
+
+.sectionD .wrap .box h1,p{
+    font-family: sans-serif;
+    margin-left: 20px;
+}
+
+.sectionE{
+    padding: 30px;
+    background-color: rgb(10, 87, 187);
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.sectionE h1,h3{
+    font-family: sans-serif;
+}
+:target{
+    transition: 0.5s;
+}
+

@@ -1,0 +1,66 @@
+body{
+  margin:0;
+  padding:0;
+  background-image: linear-gradient(to left, #00c6fb 0%, rgb(18, 100, 207) 100%);
+  padding-bottom: 30px;
+}
+
+nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100px;
+  justify-content: space-between;
+  
+}
+
+nav a:link{
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:visited{
+  color:white;
+}
+
+.registForm{
+  width:40%;
+  margin-top: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgb(18, 90, 119);
+  padding: 20px;
+  box-sizing:border-box;
+}
+
+.registForm td{
+  font-family: 'Roboto',sans-serif;
+  font-weight: bolder;
+  font-size: 18px;
+  color: rgb(83, 83, 83);
+  position: relative;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+form input,select,textarea{
+  width: 100%;
+  border: none;
+  background-color: rgb(233, 233, 233);
+  height: 30px;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+form button{
+  border: none;
+  color:white;
+  background-color: rgb(20, 96, 167);
+  border-radius: 5px;
+  height: 30px;
+}

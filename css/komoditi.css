@@ -1,0 +1,227 @@
+html{
+    height: 100%;
+}
+body{
+    margin:0;
+    padding:0;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    background-color: rgb(243, 243, 243);
+}
+.sidebar{
+    width: 15%;
+    height:100%;
+    background-color: rgb(27, 119, 194);
+}
+
+.profile img {
+        border-radius: 50%;
+    
+}
+.content{
+    width:83%;
+    height:95%;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    overflow: scroll;
+}
+
+.menu h4{
+    color:white;
+    font-family:'Roboto',sans-serif;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+}
+
+.menu  a:link{
+    color: white;
+    text-decoration: none;
+}
+
+.menu h4:hover{
+    background-color: rgb(15, 80, 153);
+}
+
+.menu  a:visited{
+    color: white;
+}
+.content h1{
+    font-family: 'Arimo',sans-serif;
+    font-size: 40px;
+}
+
+.wrap{
+    width : 80%;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.item{
+    height: 320px;
+    width : 210px;
+    background-color: rgb(252, 252, 252);
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgb(212, 212, 212);
+    padding-bottom: 15px;
+}
+
+.item h2{
+    font-family: 'Arimo',sans-serif;
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+.item h3{
+    font-family: 'Roboto',sans-serif;
+    font-size: 15px;
+    margin-top: -15px;
+}
+
+.item img{
+    height:180px;
+    width : 220px;
+}
+
+.item button{
+    color: white;
+    padding: 5px;
+    width: 50px;
+    border : none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 10px;
+    margin-top: 0;
+}
+.item button img{  
+    width: unset; 
+    height: 50px;
+}
+.item button:first-child{
+    background-color: rgb(41, 197, 150);
+}
+
+.item button:nth-child(2){
+    background-color: rgb(230, 80, 80);
+}
+
+.itemAdd{
+    display: flex;
+    align-items: center;
+    height: 280px;
+    width: 100px;
+}
+
+.itemAdd .add{
+    height : 100px;
+    width: 100px;
+    border: none;
+    box-shadow: 3px 3px 5px rgb(218, 216, 216);
+    margin : auto;
+    border-radius: 50%;
+    background-color: rgb(231, 144, 217);
+}
+
+.item .add img{
+    height : 50px;
+}
+.level{
+    color:white;font-family:'Roboto',sans-serif;
+    background-color: rgb(211, 146, 25);
+    padding: 10px;
+    width: 30%;
+    border-radius: 40px;
+    box-sizing: border-box;
+}
+
+.blackScreen{
+    background-color: rgba(0,0,0,0.9);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    left:0;
+    display: none;
+    top: 0;
+    bottom :0;
+    right : 0;
+}
+
+.panelEdit,.panelTambah{
+    padding-bottom: 20px;
+    border-radius: 15px;
+    width  : 40% ;
+    display: none;
+    background-color: white;
+    position: absolute;
+    top : 20%;
+}
+
+.panelEdit table{
+    width: 80%;
+    font-family: 'Roboto',sans-serif;
+    font-size: 20px;
+}
+
+.panelTambah table{
+    width: 80%;
+    font-family: 'Roboto',sans-serif;
+    font-size: 20px;
+}
+
+.panelEdit input,select{
+    background-color: rgb(186, 219, 228);
+    border : none;
+    border-radius: 5px;
+    width: 80%;
+    height: 30px;
+}
+
+.panelTambah input,select{
+    background-color: rgb(186, 219, 228);
+    border : none;
+    border-radius: 5px;
+    width: 80%;
+    height: 30px;
+}
+
+.panelEdit button{
+    width: 20%;
+    margin-left: 20px;
+    margin-top : 20px;
+    border:none;
+    color : white;
+    border-radius: 5px;
+    height: 40px;
+    background-color: rgb(15, 116, 90);
+}
+
+.panelTambah button{
+    width: 20%;
+    margin-left: 20px;
+    margin-top : 20px;
+    border:none;
+    color : white;
+    border-radius: 5px;
+    height: 40px;
+    background-color: rgb(15, 116, 90);
+}
+.panelTambah input button{
+    background-color: red;
+}
+
+.panelEdit .cancel{
+    background-color: rgb(177, 16, 16);
+}
+
+.panelTambah .cancel{
+    background-color: rgb(177, 16, 16);
+}
+

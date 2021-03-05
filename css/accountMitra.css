@@ -1,0 +1,188 @@
+html{
+    height: 100%;
+    overflow-y: hidden;
+}
+body{
+    margin:0;
+    padding:0;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    background-color: rgb(243, 243, 243);
+}
+.sidebar{
+    width: 15%;
+    height:100%;
+    background-color: rgb(27, 119, 194);
+}
+.content{
+    width:83%;
+    height:95%;
+    margin: 20px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    overflow: scroll;
+}
+
+.menu h4{
+    color:white;
+    font-family:'Roboto',sans-serif;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+}
+
+.menu  a:link{
+    color: white;
+    text-decoration: none;
+}
+
+.menu h4:hover{
+    background-color: rgb(15, 80, 153);
+}
+
+.menu  a:visited{
+    color: white;
+}
+.content h1{
+    font-family: 'Arimo',sans-serif;
+    font-size: 40px;
+}
+
+.kotak1, .kotak2{
+    width: 40%;
+    margin: 20px;
+    height: 500px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.kotak2 h3{
+    font-family: 'Roboto',sans-serif;
+    font-weight: bolder;
+}
+.kotak2 h4{
+    font-family: 'Roboto',sans-serif;
+}
+
+button{
+    margin-top: 30px;
+    border:none;
+    padding: 10px;
+    background-color: rgb(12, 105, 54);
+    color: white;
+}
+
+.item{
+    width: 95%;
+    padding: 20px;
+    box-sizing: border-box;
+    display:flex ;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(200, 201, 201);
+}
+
+.sidebar .profile img {
+    border-radius: 50%;
+    
+}
+
+.level{
+    color:white;font-family:'Roboto',sans-serif;
+    background-color: rgb(211, 146, 25);
+    padding: 10px;
+    width: 30%;
+    border-radius: 40px;
+    box-sizing: border-box;
+}
+
+.blackScreen{
+    position : fixed;
+    left : 0;
+    right : 0;
+    bottom : 0;
+    top : 0;
+    background-color: rgba(0,0,0,0.8);
+    display:none;
+    justify-content: center;
+    align-items: center;
+}
+
+.blackScreen .updateAccountPanel{
+    border-radius:15px;
+    color:black;
+    display: none;
+    width : 40%;
+    padding-bottom: 20px;
+    background-color: white;
+}
+.blackScreen .updateAccountPanel table{
+    width: 90%;
+    font-family: 'Roboto',sans-serif;
+}
+.blackScreen .gantiProfile{
+    border-radius:15px;
+    display: none;
+    width : 40%;
+    padding-bottom: 20px;
+    background-color: white;
+}
+
+.blackScreen .gantiSampul{
+    border-radius:15px;
+    display: none;
+    width : 40%;
+    padding-bottom: 20px;
+    background-color: white;
+}
+
+.updateAccountPanel input,select,textarea{
+    background-color: rgb(186, 219, 228);
+    border : none;
+    border-radius: 5px;
+    width: 80%;
+    height: 30px;
+}
+
+
+.updateAccountPanel button{
+    width: 20%;
+    margin-left: 20px;
+    margin-top : 20px;
+    border:none;
+    color : white;
+    border-radius: 5px;
+    height: 40px;
+    background-color: rgb(15, 116, 90);
+}
+.gantiProfile button{
+    width: 20%;
+    margin-left: 20px;
+    margin-top : 20px;
+    border:none;
+    color : white;
+    border-radius: 5px;
+    height: 40px;
+    background-color: rgb(15, 116, 90);
+}
+.gantiSampul button{
+    width: 20%;
+    margin-left: 20px;
+    margin-top : 20px;
+    border:none;
+    color : white;
+    border-radius: 5px;
+    height: 40px;
+    background-color: rgb(15, 116, 90);
+}
+.updateAccountPanel .cancel{
+    background-color: rgb(177, 16, 16);
+}
+.gantiProfile .cancel{
+    background-color: rgb(177, 16, 16);
+}
+.gantiSampul .cancel{
+    background-color: rgb(177, 16, 16);
+}

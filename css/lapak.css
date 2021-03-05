@@ -1,0 +1,145 @@
+html{
+    height: 100%;
+}
+body{
+    margin:0;
+    padding:0;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    background-color: rgb(243, 243, 243);
+}
+.sidebar{
+    width: 15%;
+    height:100%;
+    background-color: rgb(27, 119, 194);
+}
+.content{
+    width:83%;
+    height:95%;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    overflow: scroll;
+}
+
+.menu h4{
+    color:white;
+    font-family:'Roboto',sans-serif;
+    height: 40px;
+    line-height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+}
+
+.menu  a:link{
+    color: white;
+    text-decoration: none;
+}
+
+.menu h4:hover{
+    background-color: rgb(15, 80, 153);
+}
+
+.menu  a:visited{
+    color: white;
+}
+.content h1{
+    font-family: 'Arimo',sans-serif;
+}
+.search{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+}
+
+
+.level{
+    color:white;font-family:'Roboto',sans-serif;
+    padding: 10px;
+    width: 30%;
+    border-radius: 40px;
+    box-sizing: border-box;
+}
+
+.profile img {
+    border-radius: 50%;
+}
+
+.sampul{
+    width: 100%;
+    padding-top : 20px;
+    line-height: 18px;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    background-color: rgb(32, 165, 165);
+    box-shadow: 6px 3px 5px rgb(155, 155, 155);
+
+}
+
+.sampul img{
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.bintang img {
+    border: none;
+    height : 30px;
+}
+
+.result{
+    margin-top: 50px;
+    width: 95%;
+    height : 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap : wrap;
+}
+
+.star img{
+    border : none;
+    height: 30px;
+    margin-bottom: 50px;
+}
+.result .item {
+    height : 350px;
+    background-color: rgb(252, 252, 252);
+    overflow: hidden;
+    width: 210px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px rgb(175, 175, 175);
+    line-height: 10px;
+    overflow: hidden;
+}
+
+.result .item img {
+    height:180px;
+    width :220px;
+}
+
+.result .item h2{
+    font-family : 'Arimo',sans-serif;
+}
+
+.result .item h3{
+    font-family : 'Roboto',sans-serif;
+}
+
+.result .item input{
+    width : 30px;
+    height : 20px;
+    border : none;
+    background-color: rgb(255, 255, 255);
+    font-size : 20px;
+}
+
+.result .item button{
+    border : none;
+    height : 30px;
+    width : 100px;
+    color: white;
+    background-color: rgb(41, 123, 179);
+    border-radius: 10px;
+}

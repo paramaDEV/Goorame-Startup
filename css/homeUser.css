@@ -1,0 +1,124 @@
+html{
+    height: 100%;
+}
+body{
+    margin:0;
+    padding:0;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    background-color: rgb(243, 243, 243);
+}
+.sidebar{
+    width: 15%;
+    height:100%;
+    background-color: rgb(27, 119, 194);
+}
+.content{
+    width:83%; 
+    height:95%;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    overflow: scroll;
+}
+
+.menu h4{
+    font-size:15px;
+    color:white;
+    font-family:'Roboto',sans-serif;
+    height: 40px;
+    line-height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+}
+
+.menu  a:link{
+    color: white;
+    text-decoration: none;
+}
+
+.menu h4:hover{
+    background-color: rgb(15, 80, 153);
+}
+
+.menu  a:visited{
+    color: white;
+}
+.content h1{
+    font-family: 'Arimo',sans-serif;
+}
+.search{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+}
+
+.search input{
+    border: none;
+    background-color: rgb(238, 237, 237);
+    height: 40px;
+    width: 40%;
+}
+.search button{
+    border: none;
+    color: white;
+    background-color: rgb(19, 147, 170);
+    width: 100px;
+}
+
+.result {
+    margin-top: 50px;
+    height: 400px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+    
+}
+
+.result .kotak{
+    height: 400px;
+    width:255px;
+    background-color: white;
+    box-shadow: 3px 3px 7px grey;
+    line-height: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+  
+}
+.result button{
+    border:none;
+    height: 30px;
+    background-color: rgb(13, 143, 56);
+    color: white;
+    border-radius: 5px;
+}
+.result .kotak h4{
+    font-family: 'Arimo',sans-serif;
+    line-height: 15px;
+    margin-bottom: -5;
+}
+
+.result .kotak h5{
+    margin-top: -5;
+}
+.result .kotak .gambar{
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.level{
+    color:white;font-family:'Roboto',sans-serif;
+    padding: 10px;
+    width: 30%;
+    border-radius: 40px;
+    box-sizing: border-box;
+}
+
+.profile img {
+    border-radius: 50%;
+}
