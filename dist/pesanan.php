@@ -11,7 +11,12 @@ if(!isset($_SESSION["status"])){
 }
 $idmitra=$_SESSION["idmitra"];
 $data=$conn->selectData("SELECT * FROM mitra WHERE id='$idmitra'");
+$data2=$conn->selectData("SELECT * FROM pesanan WHERE id_mitra='$idmitra'");
 $bintang=$data[0]["bintang"];
+
+if(isset($_POST["akhiri"])){
+    $conn->akhiriPesanan($_POST);
+}
 
 ?>
 <!DOCTYPE html>
@@ -47,26 +52,28 @@ $bintang=$data[0]["bintang"];
         <center><h1 style="margin-top:50px">Pesanan aktif</h1></center>
         <center>
             <div class="tagihan">
+            <?php
+            foreach($data2 as $x):
+            ?>
                 <div class="item">
                     <div class="kotak" style="line-height: 11px;">
-                        <h1>Ikan Lele</h1>
-                        <h4>Jumlah : 4 Kg</h4>
-                        <h4>Total: Rp 63.000</h4>
+                        <h1>Ikan <?=$x["ikan"]?></h1>
+                        <h4>Jumlah : <?=$x["jumlah"]?> Kg</h4>
+                        <h4>Total: Rp <?=$conn->rupiah($x["biaya"])?></h4>
                     </div>
                     <div class="kotak">
                         <h1><button>Menunggu diproses</button></h1>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="kotak" style="line-height: 11px;">
-                        <h1>Ikan Nila</h1>
-                        <h4>Jumlah : 1 Kg</h4>
-                        <h4>Total: Rp 22.000</h4>
-                    </div>
-                    <div class="kotak">
-                        <h1><button>Menunggu diproses</button></h1>
-                    </div>
-                </div>
+            <?php
+            $penghasilan=0;
+            $penghasilan+=$x["biaya"];
+            endforeach ;
+            if($data2==null){?>
+            <img src='../assets/trolley.png' height='350px'><br><h2 style='font-family:Roboto,sans-serif'>Anda belum memiliki pesanan saat ini</h2>
+            <?php
+            }else{
+            ?>
             </div>
             <br>
             <div class="rincian">
@@ -74,9 +81,22 @@ $bintang=$data[0]["bintang"];
                     <h1>Jumlah pesanan saat ini : </h1>
                 </div>
                 <div class="kotak">
-                    <center><h1>2 Pesanan </h1></center>
+                    <center><h1><?=count($data2)?> Pesanan </h1></center>
                 </div>
             </div>
+            <div class="rincian">
+                <div class="kotak" style="line-height: 11px;">
+                    <h1>Penghasilan : </h1>
+                </div>
+                <div class="kotak">
+                    <center><h1><?="Rp".$conn->rupiah($penghasilan)?></h1></center>
+                </div>
+            </div>
+            <form action="" method="POST">
+                <input type="hidden" name="idmitra" value="<?=$idmitra?>">
+            <button type="submit" name="akhiri" onclick="return confirm('Apakah seluruh proses sudah selesai?')">Selesai Proses</button>
+            </form>
+            <?php } ?>
     </center>
     </div>
 </body>

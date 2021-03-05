@@ -84,6 +84,7 @@ body{
 .item .kotak button{
     background-color: rgb(206, 30, 30);
     padding: 10px;
+    border-radius: 10px;
     border : none;
     color: white;
 }
@@ -110,4 +111,13 @@ body{
 
 .profile img {
     border-radius: 50%;
+}
+
+button{
+    border : none;
+    color:white;
+    background-color: rgb(226, 131, 41);
+    padding:15px;
+    border-radius: 20px;
+    cursor: pointer;
 }

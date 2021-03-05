@@ -384,6 +384,23 @@ class Functions{
             }
     }
 
+    public function akhiriPesanan($data){
+        $idmitra = $data["idmitra"];
+        $data = $this->selectData("SELECT * FROM pesanan WHERE id_mitra='$idmitra'");
+        foreach($data as $x):
+            $ikan=$x["ikan"];
+            $jumlah=$x["jumlah"];
+            $harga=$x["biaya"];
+
+            $query = "INSERT INTO riwayat_mitra(id_mitra,tanggal,item,jumlah,harga) values ('$idmitra',CURRENT_DATE,'$ikan','$jumlah','$harga')";
+            if($this->db->query($query)==false){
+                echo $this->db->error;
+            }
+        endforeach;
+        $this->db->query("DELETE FROM pesanan WHERE id_mitra='$idmitra'");
+        echo "<script>alert('Berhasil');window.location.href='pesanan.php'</script>";
+    }
+
     public function hitungKeranjang($id){
         $data = $this->selectData("SELECT * FROM keranjang WHERE id_user='$id'"); 
         $jumlah = count($data);
