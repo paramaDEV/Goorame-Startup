@@ -10,7 +10,17 @@ if(!isset($_SESSION["status"])){
     exit;
 }
 $idmitra=$_SESSION["idmitra"];
+$this_date=date("Y-m-d");
+$jumlah_ikan_terjual=0;
+
 $data=$conn->selectData("SELECT * FROM mitra WHERE id='$idmitra'");
+$data2=$conn->selectData("SELECT * FROM pesanan WHERE id_mitra='$idmitra'");
+$data3=$conn->selectData("SELECT * FROM riwayat_mitra WHERE tanggal='$this_date'");
+
+foreach($data3 as $x):
+    $jumlah_ikan_terjual+=$x["jumlah"];
+endforeach;
+
 $bintang=$data[0]["bintang"];
 
 ?>
@@ -46,13 +56,15 @@ $bintang=$data[0]["bintang"];
     </div>
     <div class="content">
         <center><h1>Dashboard Mitra</h1></center>
-        <canvas id="lineChart" height="100" style="height: 130px;"></canvas>
+        <center><div class="wrap-chart" style="width : 90%;">
+            <canvas id="lineChart" height="100" style="height: 100px;"></canvas>
+        </div></center>
         <center>   
             <div class="wrap">
                 <div class="kotak">
-                    <div class="container" style="background-color: rgb(23, 89, 175);"><h1>99</h1><h3>Pesanan aktif </h3></div>
-                    <div class="container" style="background-color: rgb(218, 106, 15);" ><h1>99</h1><h3>Pesanan selesai</h3></div>
-                    <div class="container" style="background-color: rgb(218, 15, 66);"><h1>99</h1><h3>Ikan terjual (Kg)</h3></div>
+                    <div class="container" style="background-color: rgb(23, 89, 175);"><h1><?= count($data2);?></h1><h3>Pesanan aktif </h3></div>
+                    <div class="container" style="background-color: rgb(218, 106, 15);" ><h1><?= count($data3);?></h1><h3>Pesanan selesai</h3></div>
+                    <div class="container" style="background-color: rgb(218, 15, 66);"><h1><?= $jumlah_ikan_terjual;?></h1><h3>Kg ikan terjual </h3></div>
                 </div>
             </div>
         </center>

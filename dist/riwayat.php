@@ -13,6 +13,7 @@ $iduser=$_SESSION["iduser"];
 $data=$conn->selectData("SELECT * FROM user WHERE id='$iduser'");
 $data2=$conn->selectData("SELECT * FROM riwayat_user WHERE id_user='$iduser';");
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
