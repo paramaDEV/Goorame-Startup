@@ -420,6 +420,10 @@ class Functions{
             exit;
         }
     }
+
+    public function hitungTanggal($nomer=0){
+         return date("Y-m-d",time()+(60*60*24*$nomer));
+    }
 }
 
 

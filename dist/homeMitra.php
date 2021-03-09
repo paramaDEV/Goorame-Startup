@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'Functions.php';
+require 'stats.php';
 
 if(!isset($_SESSION["status"])){
     header("location:index.php");
@@ -22,6 +23,11 @@ foreach($data3 as $x):
 endforeach;
 
 $bintang=$data[0]["bintang"];
+
+for($i=0;$i<7;$i++){
+    $arr_tanggal[]= $conn->hitungTanggal(-(1+$i));
+    $arrdat[]=count($conn->selectData("SELECT * FROM riwayat_mitra WHERE id_mitra='$idmitra' AND tanggal='$arr_tanggal[$i]'"));
+}
 
 ?>
 <!DOCTYPE html>
@@ -69,6 +75,75 @@ $bintang=$data[0]["bintang"];
             </div>
         </center>
     </div>
-    <script src="../js/homeMitra.js"></script>
+    <script>
+        var ctx = document.getElementById('lineChart').getContext('2d');
+    // Line chart
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels:  ["<?= $datachart[0]["tanggal"]?>",
+                        "<?= $datachart[1]["tanggal"]?>",
+                        "<?= $datachart[2]["tanggal"]?>",
+                        "<?= $datachart[3]["tanggal"]?>",
+                        "<?= $datachart[4]["tanggal"]?>",
+                        "<?= $datachart[5]["tanggal"]?>",
+                        "<?= $datachart[6]["tanggal"]?>",
+                    ],
+            datasets: [{
+                label: 'Data penjualan 7 hari terakhir',
+                data: [<?= $datachart[0]["total"]?>,
+                        <?= $datachart[1]["total"]?>,
+                        <?= $datachart[2]["total"]?>,
+                        <?= $datachart[3]["total"]?>,
+                        <?= $datachart[4]["total"]?>,
+                        <?= $datachart[5]["total"]?>,
+                        <?= $datachart[6]["total"]?>,
+                    ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+    scales: {
+      xAxes: [{
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          maxTicksLimit:7
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          max: 20,
+          maxTicksLimit: 5
+        },
+        gridLines: {
+          display: true
+        }
+      }],
+    },
+    legend: {
+      display: false
+    }
+  }
+    });
+
+    </script>
 </body>
 </html>
