@@ -1,7 +1,5 @@
 <?php
 
-
-
 $idmitra=$_SESSION["idmitra"];
 
 // echo $conn->hitungTanggal();

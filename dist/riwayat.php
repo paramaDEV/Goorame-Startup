@@ -29,6 +29,8 @@ $data2=$conn->selectData("SELECT * FROM riwayat_user WHERE id_user='$iduser';");
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../favicon.png">
     <link rel="stylesheet" href="../css/riwayat.css"><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/riwayatUser.js"></script>
     <title>Riwayat</title>
 </head>
 <body>
@@ -46,6 +48,7 @@ $data2=$conn->selectData("SELECT * FROM riwayat_user WHERE id_user='$iduser';");
     </div>
     <div class="content">
         <center><h1 style="margin-top:50px">Riwayat</h1></center>
+        <button id="alltanggal">Show All</button><input type="date" id="tanggal">
         <center><table border="0" cellspacing=0 cellpadding=10>
             <tr>
                 <td>Tanggal</td>

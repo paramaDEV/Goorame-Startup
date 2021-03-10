@@ -376,7 +376,9 @@ class Functions{
             $jumlah=$x["jumlah"];
             $biaya=$x["biaya"];
             $query="INSERT INTO pesanan (id_user,id_mitra,ikan,jumlah,biaya) values ('$iduser','$idmitra','$ikan','$jumlah','$biaya')";
+            $query2="INSERT INTO riwayat_user (id_user,tanggal,item,jumlah,harga) values ('$iduser',CURRENT_DATE,'$ikan','$jumlah','$biaya')";
             $this->db->query($query);
+            $this->db->query($query2);
         endforeach;
             $query2="DELETE FROM keranjang WHERE id_user='$iduser'";
             if($this->db->query($query2)==true){

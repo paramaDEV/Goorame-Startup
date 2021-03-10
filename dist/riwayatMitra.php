@@ -10,7 +10,7 @@ if(!isset($_SESSION["status"])){
 }
 $idmitra=$_SESSION["idmitra"];
 $data = $conn->selectData("SELECT * FROM mitra WHERE id='$idmitra'");
-$data2 = $conn->selectData("SELECT * FROM riwayat_mitra WHERE id='$idmitra'");
+$data2 = $conn->selectData("SELECT * FROM riwayat_mitra WHERE id_mitra='$idmitra'");
 $bintang=$data[0]["bintang"];
 
 ?>
@@ -27,6 +27,8 @@ $bintang=$data[0]["bintang"];
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../favicon.png">
     <link rel="stylesheet" href="../css/riwayat.css"><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/riwayatMitra.js"></script>
     <title>Riwayat</title>
 </head>
 <body>
@@ -45,6 +47,7 @@ $bintang=$data[0]["bintang"];
     </div>
     <div class="content">
         <center><h1 style="margin-top:50px">Riwayat</h1></center>
+        <button id="alltanggal">Show All</button><input type="date" id="tanggal">
         <center><table border="0" cellspacing=0 cellpadding=10>
         
             <tr>
@@ -53,6 +56,7 @@ $bintang=$data[0]["bintang"];
                 <td>Jumlah</td>
                 <td>Hasil</td>
             </tr>
+            
             <?php
             $no=1;
             foreach($data2 as $x):
@@ -68,6 +72,7 @@ $bintang=$data[0]["bintang"];
             endforeach;
             ?>
         </table></center>
-    </div>      
+    </div>
+      
 </body>
 </html>

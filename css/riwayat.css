@@ -82,3 +82,19 @@ tr:first-child{
 .profile img {
     border-radius: 50%;
 }
+
+#tanggal, #alltanggal{
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 10%;
+    margin-bottom: 20px;
+    background-color: rgb(223, 223, 223);
+    color : rgb(68, 68, 68);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#tanggal{
+    margin-left: 10px;
+}

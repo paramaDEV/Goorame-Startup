@@ -53,6 +53,7 @@ if(isset($_POST["akhiri"])){
         <center>
             <div class="tagihan">
             <?php
+            $penghasilan=0;
             foreach($data2 as $x):
             ?>
                 <div class="item">
@@ -66,7 +67,7 @@ if(isset($_POST["akhiri"])){
                     </div>
                 </div>
             <?php
-            $penghasilan=0;
+            
             $penghasilan+=$x["biaya"];
             endforeach ;
             if($data2==null){?>
