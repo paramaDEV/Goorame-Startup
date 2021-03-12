@@ -1,5 +1,6 @@
 <?php
-
+require_once("../phpmailer/PHPMailerAutoload.php");
+date_default_timezone_set('Asia/Jakarta');
 class Functions{
     public $db ;
 
@@ -370,16 +371,22 @@ class Functions{
     public function checkout($data){
         $iduser=$data["iduser"];
         $data1 = $this->selectData("SELECT * FROM keranjang WHERE id_user='$iduser'");
+        $data2 = $this->selectData("SELECT * FROM user WHERE id='$iduser'");
         foreach($data1 as $x):
             $idmitra=$x["id_mitra"];
+            $datamitra=$this->selectData("SELECT * FROM mitra WHERE id='$idmitra'");
             $ikan=$x["ikan"];
+            $email=$datamitra[0]["email"];
             $jumlah=$x["jumlah"];
             $biaya=$x["biaya"];
             $query="INSERT INTO pesanan (id_user,id_mitra,ikan,jumlah,biaya) values ('$iduser','$idmitra','$ikan','$jumlah','$biaya')";
             $query2="INSERT INTO riwayat_user (id_user,tanggal,item,jumlah,harga) values ('$iduser',CURRENT_DATE,'$ikan','$jumlah','$biaya')";
             $this->db->query($query);
             $this->db->query($query2);
+            $this->kirimEmailKeMitra($email,$ikan,$jumlah,$biaya);
+            $this->kirimEmailKeUser($data2[0]["email"]);
         endforeach;
+
             $query2="DELETE FROM keranjang WHERE id_user='$iduser'";
             if($this->db->query($query2)==true){
                 echo "<script>alert('Belanjaan berhasil di checkout !!!')</script>";
@@ -426,6 +433,57 @@ class Functions{
     public function hitungTanggal($nomer=0){
          return date("Y-m-d",time()+(60*60*24*$nomer));
     }
+
+    public function kirimEmailKeMitra($emailmitra,$namaIkan,$jumlah,$harga){
+        $mail = new PHPMailer();
+        $mail->isSMTP();
+        $mail->SMTPAuth=true;
+        $mail->SMTPSecure = "tls";
+        $mail->Host="smtp.gmail.com";
+        $mail->Port=587;
+        $mail->isHTML();
+        $mail->Username="";
+        $mail->Password="";
+        $mail->setFrom("".$emailmitra);
+        $mail->Subject="Pesanan Baru";
+        $mail->Body="<b><h1>Anda mendapatkan pesanan baru.</h1></b>
+                    <br>
+                    Seseorang membeli ikan dengan rincian sebagai berikut:<br>
+                    Item : $namaIkan<br>
+                    Jumlah : $jumlah<br>
+                    Harga : $harga / Kilogram<br>
+                    Silahkan proses pesanan, kurir akan mengambilnya dalam beberapa menit.
+                    ";
+        $mail->AddAddress("");
+
+        if(!$mail->Send()){
+            echo "Error : ".$mail->ErrorInfo;
+        }
+            }
+        
+            public function kirimEmailKeUser($email){
+                $mail = new PHPMailer();
+                $mail->isSMTP();
+                $mail->SMTPAuth=true;
+                $mail->SMTPSecure = "tls";
+                $mail->Host="smtp.gmail.com";
+                $mail->Port=587;
+                $mail->isHTML();
+                $mail->Username="";
+                $mail->Password="";
+                $mail->setFrom("".$email);
+                $mail->Subject="Checkout";
+                $mail->Body="<b><h1>Pesanan anda sedang di proses.</h1></b>
+                            Mohon tunggu beberapa saat. Kurir akan mengirimkan pesanan Anda dengan segera.
+                            <br>
+                            Balas email ini jika terdapat pertanyaan.
+                            ";
+                $mail->AddAddress("");
+        
+                if(!$mail->Send()){
+                    echo "Error : ".$mail->ErrorInfo;
+                }
+                    }
 }
 
 
