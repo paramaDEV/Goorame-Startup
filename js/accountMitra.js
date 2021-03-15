@@ -6,6 +6,11 @@ $(document).ready(()=>{
         $(".blackScreen").hide();
     });
 
+    $(".hamburger").click(()=>{
+        $(".sidebar").toggleClass("active");
+        $(".hamburger").toggleClass("active2");
+    });
+
     $(".btnGantiProfile").click(()=>{
         $(".gantiProfile").show();
         $(".blackScreen").css("display","flex");

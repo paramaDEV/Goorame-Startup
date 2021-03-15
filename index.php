@@ -12,6 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Raleway:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/home.css">
     <link rel="shortcut icon" href="favicon.png">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script >
+        $(document).ready(()=>{
+            $(".hamburger").click(()=>{
+                $("nav ul").toggleClass("active");
+            })
+        });
+    </script>
     <title>Welcome to GooraMe</title>
 </head>
 <script>
@@ -20,11 +28,11 @@
 </script>
 <body>
     <nav>
-         <div class="logo" style="margin-left: 20px; font-family: sans-serif;">
-             <img src="./assets/logo hackton-03.png" height="80px" style="margin-top:15px;margin-bottom:15px;">
+         <div class="logo" >
+             <img src="./assets/logo hackton-03.png">
          </div>
          <div class="navlinks">
-             <ul >
+             <ul class="">
                  <li><a href="#landing">Beranda</a></li>
                  <li><a href="#tentang">Tentang</a></li>
                  <li><a href="#layanan">Layanan</a></li>
@@ -32,23 +40,23 @@
                  <li><a href="./dist/index.php">Masuk</a></li>
              </ul>
          </div>   
+         <img src="assets/hamburger.png" height="22px" class="hamburger">
     </nav>
     <section class="sectionA" id="landing">
-        <div class="textBox" style="width:40%;height:100%;line-height: 15px;">
-            <h1 style="margin-top : 160px;font-family:'Roboto', sans-serif;font-size: 60px;">BELI IKAN</h1>
-            <h1 style="font-family: 'Roboto',sans-serif;font-size: 60px;">JADI LEBIH MUDAH</h1>
-            <h3 style="font-family: 'Raleway',sans-serif;font-size: 25px;">Menjual berbagai macam ikan untuk kebutuhan anda</h3>
-            <h3 style="font-family: 'Raleway',sans-serif;font-size: 25px;">Anda cukup dirumah, kami yang mengantarkan</h3>
+        <div class="textBox" >
+            <h1>BELI IKAN</h1>
+            <h1>JADI LEBIH MUDAH</h1>
+            <h3>Menjual berbagai macam ikan untuk kebutuhan anda</h3>
+            <h3>Anda cukup dirumah, kami yang mengantarkan</h3>
             <a href="./dist/index.php"><button class="btn" >Belanja Sekarang</button></a>
         </div>
-        <div class="imgBox"  style="width:56%;height:100%;" >
-            <center><img src="./assets/landing.png" style="height: 500px;margin-top:5%"></center>
+        <div class="imgBox"   >
+            <center><img src="./assets/landing.png" height="720px"></center>
         </div>
     </section>
     <section class="sectionB" id="tentang">
-        <center><h1 style="font-family:'Roboto',sans-serif;font-size:30px;margin-top: 20px;">Tentang Kami</h1></center>
-        <br>
-        <center><p style="width:30%;font-size:20px;"><h3 style="font-size:20px;font-family:'Raleway', sans-serif;">GooraMe merupakan website penyedia jasa layanan bagi kita yang ingin membeli ikan
+        <center><h1>Tentang Kami</h1></center>
+        <center><p style="width:30%;line-height:30px;"><h3 >GooraMe merupakan website penyedia jasa layanan bagi kita yang ingin membeli ikan
             tapi malas untuk keluar rumah, apalagi dalam kondisi pandemi seperti sekarang. Kami hadir
             menawarkan solusi untuk anda . Kurir kami akan membeli dan mengantarkannya sampai rumah anda.
             Bekerja sama dengan puluhan pemilik budidaya lokal dengan berbagai jenis pilihan ikan. Pelayanan
@@ -56,31 +64,31 @@
         </h3></p></center>
     </section>
     <section class="sectionC" id="layanan">
-        <center><h1 style="font-family:sans-serif;font-size:30px;margin-top: 20px;">Layanan</h1></center>
-        <div class="wrap" style="margin-top: 50px;">
+        <center><h1 >Layanan</h1></center>
+        <div class="wrap" style="margin-top: 20px;">
             <div class="box" >
-                <img src="./assets/diantar.png" height="250px">
+                <img src="./assets/diantar.png" >
                 <center><h3>Pesanan dikirim langsung ke rumah anda</h3></center>
             </div>
             <div class="box" >
-                <img src="./assets/kualitas.png" height="250px">
+                <img src="./assets/kualitas.png" >
                 <center><h3>Kualitas ikan sangat baik dan terjamin</h3></center>
             </div>
             <div class="box" >
-                <img src="./assets/terjangkau.png" height="250px">
+                <img src="./assets/terjangkau.png" >
                 <center><h3>Biaya terjangkau</h3></center>
             </div>
             <div class="box" >
-                <img src="./assets/kapansaja.png" height="250px">
+                <img src="./assets/kapansaja.png" >
                 <center><h3>Bisa pesan kapan saja</h3></center>
             </div>
         </div>
     </section>
     <section class="sectionD">
-        <center><h1 style="font-family:'Roboto',sans-serif;font-size:30px;">Mitra</h1></center>
+        <center><h1 >Mitra</h1></center>
         <div class="wrap">
             <div class="box">
-                <img src="./assets/seller1.jpg" height="130px">
+                <img src="./assets/seller1.jpg" >
                 <div>
                     <h1>Bapak Amirullah</h1>
                     <p>"Setelah bergabung dengan start up GooraMe, allhamdulillah
@@ -89,7 +97,7 @@
                 </div>
             </div>
             <div class="box">
-                <img src="./assets/seller2.jpg" height="130px">
+                <img src="./assets/seller2.jpg" >
                 <div>
                     <h1>Bapak Husain</h1>
                     <p>"GooraMe sangat bagus, mereka memajukan perekonomian
@@ -98,7 +106,7 @@
                 </div>
             </div>
             <div class="box">
-                <img src="./assets/seller3.jpg" height="130px">
+                <img src="./assets/seller3.jpg" >
                 <div>
                     <h1>Bapak Rusdi</h1>
                     <p>"Saya senang bergabung dengan GooraMe ini. allhamdulillah
@@ -107,7 +115,7 @@
                 </div>
             </div>
             <div class="box">
-                <img src="./assets/seller4.jpg" height="130px">
+                <img src="./assets/seller4.jpg" >
                 <div>
                     <h1>Mas Fauzan</h1>
                     <p>"Dulu saya ragu mau memulai bisnis perikanan. Setelah
@@ -116,7 +124,7 @@
                 </div>
             </div>
             <div class="box">
-                <img src="./assets/seller5.jpg" height="130px">
+                <img src="./assets/seller5.jpg" >
                 <div>
                     <h1>Bapak Nasruddin</h1>
                     <p>"Awal saya membangun usaha budidaya lele, usaha saya
@@ -125,7 +133,7 @@
                 </div>
             </div>
             <div class="box">
-                <img src="./assets/seller6.jpg" height="130px">
+                <img src="./assets/seller6.jpg" >
                 <div>
                     <h1>Mas Ujang</h1>
                     <p>"Pokoknya GooraMe joss dah, petani ikan
@@ -133,17 +141,17 @@
                 </div>
             </div>
         </div>
-        <center><a href="./dist/rgstMitra.php"><button class="btn" style="margin-top: 100px;" >Daftar menjadi mitra</button></a></center>
+        <center><a href="./dist/rgstMitra.php"><button class="btn" style="margin-top:80px;">Daftar Mitra</button></a></center>
     </section>
     <section class="sectionE" id="kontak">
-        <center><h1 style="font-family:sans-serif;font-size:30px;margin-top:20px">Contact</h1></center>
+        <center><h1>Contact</h1></center>
             <center><div class="telp">
                 <h3 style="font-family:'Assistant', sans-serif;">Fany Parama Admaja    : 083144290139</h3>
                 <h3 style="font-family:'Assistant', sans-serif;">Seta Murdha Pamungkas : 081312867218</h3>
                 <h3 style="font-family:'Assistant', sans-serif;">Mauren Helvia Devi    : 081333406278</h3>
             </div></center>
             <center><h1 style="font-family:'Assistant';margin-top: 30px;">Made with spirit by Taksaka Team</h1></center>
-            <center><img src="./assets/taksaka.png" style="height:150px"></center>    
+            <center><img src="./assets/taksaka.png" ></center>    
     </section>
     
 </body>

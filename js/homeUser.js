@@ -1,4 +1,9 @@
 $(document).ready(()=>{
+    $(".hamburger").click(()=>{
+        $(".sidebar").toggleClass("active");
+        $(".hamburger").toggleClass("active2");
+    })
+
     $("#searchField").keyup(()=>{
         let iduser=$("#iduser").val();
         let keyword=$("#searchField").val();

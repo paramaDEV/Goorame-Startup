@@ -33,15 +33,26 @@ if(isset($_POST["akhiri"])){
     <link rel="shortcut icon" href="../favicon.png">
     <link rel="stylesheet" href="../css/pesanan.css"><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     <title>Pesanan Aktif</title>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $(".hamburger").click(()=>{
+            $(".sidebar").toggleClass("active");
+            $(".hamburger").toggleClass("active2");
+            })
+        })
+        
+    </script>
 </head>
 <body>
+<img src="../assets/blue-humberger.jpg" class="hamburger">
     <div class="sidebar">
-        <center><img class="profile"  src="../mitraimage/<?=$conn->cekGambar($data[0]['profile']);?>" width="100px" height="100px" style="margin-top: 20px;border-radius:50%;"></center>
+        <center><img class="profile"  src="../mitraimage/<?=$conn->cekGambar($data[0]['profile']);?>"  style="margin-top: 20px;border-radius:50%;"></center>
         <center><h4 style="color:white;font-family:'Roboto',sans-serif"><?=$data[0]["nama_pemilik"]?></h4></center>
         <center><?php $conn->showStar($bintang)?></center>
         <div class="menu" style="margin-top:100px;">
             <a href="homeMitra.php"><img src="../assets/home.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Beranda</h4></a>
-            <a href="pesanan.php"><img src="../assets/keranjang.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Pesanan<?=$conn->hitungPesanan($idmitra)?></h4></a>
+            <a href="pesanan.php"><img src="../assets/keranjang.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Pesanan<span style="position:absolute;"><?=$conn->hitungPesanan($idmitra)?></h4></a>
             <a href="riwayatMitra.php"><img src="../assets/riwayat.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Riwayat</h4></a>
             <a href="komoditi.php"><img src="../assets/komoditi.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Komoditi</h4></a>
             <a href="accountMitra.php"><img src="../assets/account.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Akun</h4></a>
@@ -63,7 +74,7 @@ if(isset($_POST["akhiri"])){
                         <h4>Total: Rp <?=$conn->rupiah($x["biaya"])?></h4>
                     </div>
                     <div class="kotak">
-                        <h1><button>Menunggu diproses</button></h1>
+                        <button><h1>Menunggu diproses</h1></button>
                     </div>
                 </div>
             <?php
@@ -71,7 +82,7 @@ if(isset($_POST["akhiri"])){
             $penghasilan+=$x["biaya"];
             endforeach ;
             if($data2==null){?>
-            <img src='../assets/trolley.png' height='350px'><br><h2 style='font-family:Roboto,sans-serif'>Anda belum memiliki pesanan saat ini</h2>
+            <img src='../assets/trolley.png' ><br><h2 style='font-family:Roboto,sans-serif'>Anda belum memiliki pesanan saat ini</h2>
             <?php
             }else{
             ?>
@@ -82,7 +93,7 @@ if(isset($_POST["akhiri"])){
                     <h1>Jumlah pesanan saat ini : </h1>
                 </div>
                 <div class="kotak">
-                    <center><h1><?=count($data2)?> Pesanan </h1></center>
+                    <center><h1><?=count($data2)?></h1></center>
                 </div>
             </div>
             <div class="rincian">

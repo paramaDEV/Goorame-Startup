@@ -44,8 +44,9 @@ if(isset($_POST["submitGantiSampul"])){
     <title>Account</title>
 </head>
 <body>
+<img src="../assets/blue-humberger.jpg" class="hamburger">
     <div class="sidebar">
-        <center><img class="profile" src="../mitraimage/<?=$conn->cekGambar($data[0]['profile']);?>" height="100px" width="100px" style="margin-top: 20px;border-radius:50%;"></center>
+        <center><img class="profile" src="../mitraimage/<?=$conn->cekGambar($data[0]['profile']);?>"  style="margin-top: 20px;border-radius:50%;"></center>
         <center><h4 style="color:white;font-family:'Roboto',sans-serif"><?=$data[0]["nama_pemilik"]?></h4></center>
         <center><?php $conn->showStar($bintang)?></center>
         <div class="menu" style="margin-top:100px;">
@@ -59,15 +60,17 @@ if(isset($_POST["submitGantiSampul"])){
     </div>
     <div class="content">
        <div class="kotak1">
-           <center><img src="../mitraimage/<?=$conn->cekGambar($data[0]['profile']);?>" height="200px"></center>
+           <div class="wrap">
+           <center><img src="../mitraimage/<?=$conn->cekGambar($data[0]['profile']);?>" style="width:50%"></center>
            <center><h5 style="font-family:'Roboto',sans-serif;"><i>Rekomendasi : Upload foto minimal 250 x 250 pixel</i></h5></center>
            <center><button class="btnGantiProfile" style="margin-top:-10px;">Ganti Profil</button></center>
+        </div>
            <br><br>
-           <center><img src="../mitraimage/<?=$conn->cekGambar($data[0]['sampul']);?>" height="200px"></center>
-           <center><h4 style="font-family:'Roboto',sans-serif;">Foto ini akan dilihat oleh Pelanggan di pencarian</h4></center>
+        <div class="wrap">
+           <center><img src="../mitraimage/<?=$conn->cekGambar($data[0]['sampul']);?>" style="width:50%" ></center>
            <center><h5 style="font-family:'Roboto',sans-serif;"><i>Rekomendasi : Upload foto minimal 450 x 650 pixel</i></h5></center>
            <center><button class="btnGantiSampul" style="margin-top:-10px;margin-bottom:30px">Ganti Foto</button></center>
-       </div>
+       </div></div>
        <div class="kotak2">
            <table style="width: 100%;">
                 <tr>

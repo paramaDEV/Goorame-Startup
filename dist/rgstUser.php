@@ -28,9 +28,9 @@ if(isset($_POST["submit"])){
 <body>
     <nav>
         <div class="logo" style="color:white">
-            <h1><img src="../assets/logo hackton-03.png" height="80px" style="margin-left:"></h1>
+            <h1><img src="../assets/logo hackton-03.png" style="margin-left:20px"></h1>
         </div>
-        <div class="">
+        <div class="home">
             <a href="../index.php"><h1 style="margin-right:20px;color:white;font-family:'Roboto',sans-serif;">Home</h1></a>
         </div>
     </nav>
@@ -79,7 +79,7 @@ if(isset($_POST["submit"])){
                         <td><span style="float: left;display: inline;font-family: 'Raleway',sans-serif;font-size: 15px;">Saya menerima segala ketentuan dan kebijakan</span></td>
                     </tr>
                 </table>
-                <button type="submit" name="submit">Daftar</button>
+                <center><button type="submit" name="submit" style="width:40%">Daftar</button></center>
             </form>
         </div>
     </center>

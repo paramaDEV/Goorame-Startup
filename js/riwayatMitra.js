@@ -3,6 +3,10 @@ $(document).ready(()=>{
     let row = "";
     let blank = "";
 
+    $(".hamburger").click(()=>{
+        $(".sidebar").toggleClass("active");
+        $(".hamburger").toggleClass("active2");
+    });
     
     $('#alltanggal').click(()=>{
         xhr.onreadystatechange=()=>{

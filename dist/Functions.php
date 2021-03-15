@@ -379,14 +379,15 @@ class Functions{
             $email=$datamitra[0]["email"];
             $jumlah=$x["jumlah"];
             $biaya=$x["biaya"];
-            $query="INSERT INTO pesanan (id_user,id_mitra,ikan,jumlah,biaya) values ('$iduser','$idmitra','$ikan','$jumlah','$biaya')";
+            $biayaterpotong = $biaya - (($biaya*10)/100);
+            $query="INSERT INTO pesanan (id_user,id_mitra,ikan,jumlah,biaya) values ('$iduser','$idmitra','$ikan','$jumlah','$biayaterpotong')";
             $query2="INSERT INTO riwayat_user (id_user,tanggal,item,jumlah,harga) values ('$iduser',CURRENT_DATE,'$ikan','$jumlah','$biaya')";
             $this->db->query($query);
             $this->db->query($query2);
             $this->kirimEmailKeMitra($email,$ikan,$jumlah,$biaya);
-            $this->kirimEmailKeUser($data2[0]["email"]);
+            
         endforeach;
-
+            $this->kirimEmailKeUser($data2[0]["email"]);
             $query2="DELETE FROM keranjang WHERE id_user='$iduser'";
             if($this->db->query($query2)==true){
                 echo "<script>alert('Belanjaan berhasil di checkout !!!')</script>";
@@ -442,9 +443,9 @@ class Functions{
         $mail->Host="smtp.gmail.com";
         $mail->Port=587;
         $mail->isHTML();
-        $mail->Username="";
-        $mail->Password="";
-        $mail->setFrom("".$emailmitra);
+        $mail->Username="admaja404@gmail.com";
+        $mail->Password="powerrangers404";
+        $mail->setFrom("admaja404@gmail.com");
         $mail->Subject="Pesanan Baru";
         $mail->Body="<b><h1>Anda mendapatkan pesanan baru.</h1></b>
                     <br>
@@ -454,7 +455,7 @@ class Functions{
                     Harga : $harga / Kilogram<br>
                     Silahkan proses pesanan, kurir akan mengambilnya dalam beberapa menit.
                     ";
-        $mail->AddAddress("");
+        $mail->AddAddress("".$emailmitra);
 
         if(!$mail->Send()){
             echo "Error : ".$mail->ErrorInfo;
@@ -469,16 +470,16 @@ class Functions{
                 $mail->Host="smtp.gmail.com";
                 $mail->Port=587;
                 $mail->isHTML();
-                $mail->Username="";
-                $mail->Password="";
-                $mail->setFrom("".$email);
+                $mail->Username="admaja404@gmail.com";
+                $mail->Password="powerrangers404";
+                $mail->setFrom("admaja404@gmail.com");
                 $mail->Subject="Checkout";
                 $mail->Body="<b><h1>Pesanan anda sedang di proses.</h1></b>
                             Mohon tunggu beberapa saat. Kurir akan mengirimkan pesanan Anda dengan segera.
                             <br>
                             Balas email ini jika terdapat pertanyaan.
                             ";
-                $mail->AddAddress("");
+                $mail->AddAddress("".$email);
         
                 if(!$mail->Send()){
                     echo "Error : ".$mail->ErrorInfo;

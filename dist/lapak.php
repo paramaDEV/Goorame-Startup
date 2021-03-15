@@ -37,16 +37,27 @@ if(isset($_POST["submit"])){
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../favicon.png">
     <link rel="stylesheet" href="../css/lapak.css">
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $(".hamburger").click(()=>{
+            $(".sidebar").toggleClass("active");
+            $(".hamburger").toggleClass("active2");
+            })
+        })
+        
+    </script>
     <title>Lapak</title>
 </head>
 <body>
+<img src="../assets/hamburger.png" class="hamburger">
     <div class="sidebar">
-        <center><img class="profile" src="../userimage/<?=$conn->cekGambar($data2[0]['profile']);?>" width="100px"height="100px" style="margin-top: 20px;border-radius:50%;"></center>
+        <center><img class="profile" src="../userimage/<?=$conn->cekGambar($data2[0]['profile']);?>" style="margin-top: 20px;border-radius:50%;"></center>
         <center><h4 style="color:white;font-family:'Roboto',sans-serif"><?=$data2[0]["nama"]?></h4></center>
         <center><h5 class="level" style="background-color:<?php echo $conn->cekLevel($data2[0]["level"])?>"><?=$data2[0]["level"]?></h5></center>
-        <div class="menu" style="margin-top:100px;">
+        <div class="menu" >
             <a href="homeUser.php"><img src="../assets/home.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Beranda</h4></a>
-            <a href="keranjang.php"><img src="../assets/keranjang.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Keranjang <?=$conn->hitungKeranjang($iduser)?></h4></a>
+            <a href="keranjang.php"><img src="../assets/keranjang.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Keranjang <span style="position:absolute;"><?=$conn->hitungKeranjang($iduser)?></span></h4></a>
             <a href="riwayat.php"><img src="../assets/riwayat.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Riwayat</h4></a>
             <a href="accountUser.php"><img src="../assets/account.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Akun</h4></a>
             <a href="logout.php"><img src="../assets/exit.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Logout</h4></a>

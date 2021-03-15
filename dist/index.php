@@ -33,15 +33,15 @@ if(isset($_POST["submit"])){
 <body>
     <nav>
         <div class="logo" style="color:white">
-            <h1><img src="../assets/logo hackton-03.png" height="80px" style="margin-left:20px;"></h1>
+            <h1><img src="../assets/logo hackton-03.png"  style="margin-left:20px;"></h1>
         </div>
-        <div class="">
+        <div class="home">
             <a href="../index.php"><h1 style="margin-right:20px;color:white;font-family:'Roboto',sans-serif;">Home</h1></a>
         </div>
     </nav>
     <center>
         <div class="registForm">
-            <center><h1 style="font-family:'Roboto',sans-serif;color:rgb(37, 37, 37)">Login</h1></center>
+            <center><h1 style="font-family:'Roboto',sans-serif;color:rgb(37, 37, 37);">Login</h1></center>
             <form action="" method="POST">
                 <table border="0" cellspacing="30" style="position:relative;">
                     <tr>

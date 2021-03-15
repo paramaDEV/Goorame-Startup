@@ -10,12 +10,28 @@ body{
     background-color: rgb(243, 243, 243);
 }
 .sidebar{
-    width: 15%;
+    width: 200px;
     height:100%;
     background-color: rgb(27, 119, 194);
 }
+
+.hamburger{
+    transition: 0.5s;
+    height: 20px;
+    position: absolute;
+    top : 4%;
+    left: 5%;
+    z-index: 9;
+    display: none;
+    cursor: pointer;
+}
+
+.menu {
+    margin-top:100px;
+}
+
 .content{
-    width:83%;
+    width:90%;
     height:95%;
     margin: 20px;
     border-radius: 10px;
@@ -64,7 +80,9 @@ tr{
 tr:nth-child(odd){
     background-color: rgb(250, 250, 250);
 }
-
+td:first-child{
+    font-weight: bold;
+}
 tr:first-child{
     background-color: rgb(44, 127, 236);
     color: white;
@@ -74,12 +92,14 @@ tr:first-child{
 .level{
     color:white;font-family:'Roboto',sans-serif;
     padding: 10px;
-    width: 30%;
+    width: 50%;
     border-radius: 40px;
     box-sizing: border-box;
 }
 
-.profile img {
+.profile  {
+    height:100px;
+    width :100px;
     border-radius: 50%;
 }
 
@@ -97,4 +117,95 @@ tr:first-child{
 
 #tanggal{
     margin-left: 10px;
+}
+
+@media screen and (max-width:900px){
+    .sidebar{
+        width: 160px;
+    }
+    .content{
+        width:80%;
+    }
+
+    table{
+        width: 90%;
+    }
+
+    .content h1{
+        font-size: 25px;
+    }
+
+    #tanggal, #alltanggal{
+        border: none;
+        padding:8px;
+    }
+
+}
+
+@media screen and (max-width:600px){
+    .sidebar{
+        width: 160px;
+        transition: 0.5s;
+        position: absolute; 
+        overflow: hidden;
+        left: -160px;
+    }
+
+    .active{
+        transition: 0.5s;
+        left: 0;
+    }
+
+    .active2{
+        left : 170px;
+        transition: 0.5s;
+    }
+    .content{
+        width:93%;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    table{
+        width: 90%;
+    }
+    table td{
+        font-size: 14px;
+    }
+
+    .profile  {
+        height:80px;
+        width :80px;
+        border-radius: 50%;
+    }
+
+    .menu{
+        margin-top : 50px;
+    }
+
+    .content{
+        width : 100%;
+        height : 100%;
+        border-radius: unset;
+        margin:unset;
+    }
+}
+
+@media screen and (max-width:320px){
+    
+    table td{
+        font-size: 10px;
+    }
+
+    #alltanggal{
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        margin-left: 10px;
+    }
+
+ 
+
 }

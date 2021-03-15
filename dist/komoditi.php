@@ -41,13 +41,14 @@ if(isset($_POST["tambah"])){
     <title>Komoditi</title>
 </head>
 <body> 
+<img src="../assets/blue-humberger.jpg" class="hamburger">
     <div class="sidebar"> 
-        <center><img class="profile" src="../mitraimage/<?=$conn->cekGambar($data2[0]['profile']);?>" width="100px" height="100px" width="100px" style="margin-top: 20px;border-radius:50%;"></center>
+        <center><img class="profile" src="../mitraimage/<?=$conn->cekGambar($data2[0]['profile']);?>"  style="margin-top: 20px;border-radius:50%;"></center>
         <center><h4 style="color:white;font-family:'Roboto',sans-serif"><?=$data2[0]["nama_pemilik"]?></h4></center>
         <center><?php $conn->showStar($bintang)?></center>
         <div class="menu" style="margin-top:100px;">
             <a href="homeMitra.php"><img src="../assets/home.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Beranda</h4></a>
-            <a href="pesanan.php"><img src="../assets/keranjang.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Pesanan <?=$conn->hitungPesanan($idmitra)?></h4></a>
+            <a href="pesanan.php"><img src="../assets/keranjang.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Pesanan <span style="position:absolute;"><?=$conn->hitungPesanan($idmitra)?></h4></a>
             <a href="riwayatMitra.php"><img src="../assets/riwayat.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Riwayat</h4></a>
             <a href=""><img src="../assets/komoditi.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Komoditi</h4></a>
             <a href="accountMitra.php"><img src="../assets/account.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Akun</h4></a>
@@ -73,10 +74,10 @@ if(isset($_POST["tambah"])){
                     </center>
                 </div>
                 <?php endforeach; ?>
-                <div class="itemAdd">
+            </div>
+            <div class="itemAdd">
                     <button class="add"><img src="../assets/add.png"></button>
                 </div>
-            </div>
         </center>
         <div class="blackScreen">
             <div class="panelEdit">
@@ -134,7 +135,12 @@ if(isset($_POST["tambah"])){
                         </tr>
                         <tr>
                             <td>Harga: </td>
-                            <td><input id="harga" type="text" name="harga" value=""></td>
+                            <td><input id="harga" type="text" name="harga" value="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan=2><span style="font-size:14px"><i>Penghasilan yang diperoleh di setiap penjualan akan dikurangi 10% 
+                            untuk dibagikan kepada start-up, sesuai persyaratan & persetujuan.</span></i></td>
                         </tr>
                         <tr>
                             <td>Gambar: </td>

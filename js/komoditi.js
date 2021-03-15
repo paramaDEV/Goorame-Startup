@@ -19,4 +19,12 @@ $(document).ready(()=>{
         $(".panelTambah").show();
     });
 
+   
+    $(".hamburger").click(()=>{
+        $(".sidebar").toggleClass("active");
+        $(".hamburger").toggleClass("active2");
+    });
+   
+    
+
 });

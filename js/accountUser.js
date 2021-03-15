@@ -4,7 +4,10 @@ $(document).ready(()=>{
         $(".blackScreen").hide();
     });
 
-
+    $(".hamburger").click(()=>{
+        $(".sidebar").toggleClass("active");
+        $(".hamburger").toggleClass("active2");
+    });
 
     $(".btnGantiProfile").click(()=>{
         $(".gantiProfile").show();
@@ -29,7 +32,6 @@ $(document).ready(()=>{
 let updateAccount = (id,nama,tanggal,kelamin,notelp,email,alamat,username)=>{
         $(".blackScreen").css("display","flex");
         $(".updateAccountPanel").show();
-
         $("#iduser").val(id);
         $("#nmlengkap").val(nama);
         $("#tanggal").val(tanggal);

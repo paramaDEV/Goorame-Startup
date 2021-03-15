@@ -5,11 +5,15 @@ body{
   padding-bottom: 30px;
 }
 
+.logo img{
+  height: 60px;
+}
+
 nav{
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 100px;
+  height: 70px;
   justify-content: space-between;
   
 }
@@ -63,4 +67,48 @@ form button{
   background-color: rgb(20, 96, 167);
   border-radius: 5px;
   height: 30px;
+}
+
+@media screen and (max-width:853px){
+  .registForm{
+    width:60%;
+    padding-left: unset;
+    padding-right: unset;
+  }
+
+  .home h1{
+    font-size: 15px;
+  }
+
+  .registForm h1{
+    margin-bottom : -10px;
+    font-size: 15px;
+  }
+
+  .registForm h4{
+    margin-bottom : 10px;
+    font-size: 15px;
+  }
+
+  .logo img{
+    height: 50px;
+  }
+
+  table{
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width:550px){
+  .registForm{
+    width:80%;
+  }
+
+  .registForm td{
+    font-size: 12px;
+  }
+
+  
+
 }

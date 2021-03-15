@@ -15,8 +15,8 @@ $this_date=date("Y-m-d");
 $jumlah_ikan_terjual=0;
 
 $data=$conn->selectData("SELECT * FROM mitra WHERE id='$idmitra'");
-$data2=$conn->selectData("SELECT * FROM pesanan WHERE id_mitra='$idmitra'");
-$data3=$conn->selectData("SELECT * FROM riwayat_mitra WHERE tanggal='$this_date'");
+$data2=$conn->selectData("SELECT * FROM pesanan WHERE id_mitra='$idmitra' AND id_mitra='$idmitra'");
+$data3=$conn->selectData("SELECT * FROM riwayat_mitra WHERE tanggal='$this_date' AND id_mitra='$idmitra'");
 
 foreach($data3 as $x):
     $jumlah_ikan_terjual+=$x["jumlah"];
@@ -44,16 +44,26 @@ for($i=0;$i<7;$i++){
     <link rel="shortcut icon" href="../favicon.png">
     <title>Dashboard Mitra</title>
     <script src="../node_modules/chart.js/dist/Chart.js"></script>
-    
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $(".hamburger").click(()=>{
+            $(".sidebar").toggleClass("active");
+            $(".hamburger").toggleClass("active2");
+            })
+        })
+        
+    </script>
 </head>
 <body>
+<img src="../assets/blue-humberger.jpg" class="hamburger">
     <div class="sidebar">
-        <center><img class="profile" src="../mitraimage/<?=$conn->cekGambar($data[0]['profile']);?>" height="100px" width="100px"style="margin-top: 20px;border-radius:50%;"></center>
+        <center><img class="profile" src="../mitraimage/<?=$conn->cekGambar($data[0]['profile']);?>" style="margin-top: 20px;border-radius:50%;"></center>
         <center><h4 style="color:white;font-family:'Roboto',sans-serif"><?=$data[0]["nama_pemilik"]?></h4></center>
         <center><?php $conn->showStar($bintang)?></center>
-        <div class="menu" style="margin-top:100px;">
+        <div class="menu" >
             <a href=""><img src="../assets/home.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Beranda</h4></a>
-            <a href="pesanan.php"><img src="../assets/keranjang.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Pesanan <?=$conn->hitungPesanan($idmitra)?></h4></a>
+            <a href="pesanan.php"><img src="../assets/keranjang.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Pesanan <span style="position:absolute;"><?=$conn->hitungPesanan($idmitra)?></span></h4></a>
             <a href="riwayatMitra.php"><img src="../assets/riwayat.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Riwayat</h4></a>
             <a href="komoditi.php"><img src="../assets/komoditi.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Komoditi</h4></a>
             <a href="accountMitra.php"><img src="../assets/account.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Akun</h4></a>
@@ -63,7 +73,7 @@ for($i=0;$i<7;$i++){
     <div class="content">
         <center><h1>Dashboard Mitra</h1></center>
         <center><div class="wrap-chart" style="width : 90%;">
-            <canvas id="lineChart" height="100" style="height: 100px;"></canvas>
+            <canvas id="lineChart"  ></canvas>
         </div></center>
         <center>   
             <div class="wrap">
