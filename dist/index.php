@@ -46,15 +46,15 @@ if(isset($_POST["submit"])){
                 <table border="0" cellspacing="30" style="position:relative;">
                     <tr>
                         <td>Username</td>
-                        <td><input type="text" name="username"  autocomplete=off required></td>
+                        <td><input type="text" name="username"  placeholder="Username" autocomplete=off required></td>
                     </tr>
                     <tr>
                         <td>Password</td>
-                        <td><input type="password" name="password"></td>
+                        <td><input type="password" placeholder="Password" name="password"></td>
                     </tr>
                 </table>
                 <center><button type="submit" name="submit" style="width:40%">Masuk</button></center>
-                <h4 style="font-family: 'Raleway',sans-serif;">Belum punya akun? klik <a href=rgstUser.php>daftar akun</a></h4>
+                <h4 style="font-family: 'Raleway',sans-serif;">Belum punya akun? <a href=rgstUser.php>daftar akun</a></h4>
             </form>
         </div>
     </center>

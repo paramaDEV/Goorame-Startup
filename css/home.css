@@ -411,7 +411,8 @@ h1{
     }
 
     .sectionB{
-        height: 55vw;
+        height: unset;
+        padding-bottom: 20px;
     }
 
     .sectionB h3{
@@ -421,6 +422,7 @@ h1{
 
     .sectionC .wrap .box{
         height : 35vw;
+       
     }
 
     .sectionD .btn{
@@ -432,7 +434,7 @@ h1{
         width: 100%;
         top : 20px;
         position: absolute;
-        left: -20px;
+        left: -34px;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -451,3 +453,29 @@ h1{
     }
 
 }
+
+@media screen and (max-width:400px){
+    .sectionB{
+        height: unset;
+    }
+
+    .sectionB h1{
+        margin-bottom: -10px;
+    }
+
+    .sectionB h3{
+        font-size:3vw;
+        font-family:'Raleway', sans-serif;
+    }
+
+
+    .sectionC .wrap .box{
+        height : 200px;
+    }
+
+    .sectionD .wrap .box{
+        width:250px;
+        height: unset;
+    }
+}
+

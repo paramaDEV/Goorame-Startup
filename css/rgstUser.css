@@ -29,13 +29,14 @@ nav a:visited{
 }
 
 .registForm{
-  width:40%;
+  width:60%;
   margin-top: 30px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 3px 3px 10px rgb(18, 90, 119);
   padding: 20px;
   box-sizing:border-box;
+  position: relative;
 }
 
 .registForm td{
@@ -101,14 +102,31 @@ form button{
 }
 
 @media screen and (max-width:550px){
+
   .registForm{
     width:80%;
   }
 
   .registForm td{
     font-size: 12px;
+  } 
+
+  input,select,textarea{
+    width: 90%;
+  }
+}
+
+
+@media screen and (max-width:370px){
+  .registForm{
+    width:90%; 
+    padding-left: unset;
+    padding-right: unset;
   }
 
-  
+  tr td:first-child{
+    display: none;
+  }
 
+ 
 }

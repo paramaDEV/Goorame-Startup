@@ -1,0 +1,140 @@
+body{
+    margin:0;
+    padding:0;
+    background-image: linear-gradient(to left, #00c6fb 0%, rgb(18, 100, 207) 100%);
+    padding-bottom: 30px;
+  }
+  
+  .logo img{
+    height: 60px;
+  }
+  
+  nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 70px;
+    justify-content: space-between;
+    
+  }
+  
+  nav a:link{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  nav a:visited{
+    color:white;
+  }
+  
+  .registForm{
+    width:60%;
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgb(18, 90, 119);
+    padding: 20px;
+    box-sizing:border-box;
+    position: relative;
+  }
+  
+  .registForm td{
+    font-family: 'Roboto',sans-serif;
+    font-weight: bolder;
+    font-size: 18px;
+    color: rgb(83, 83, 83);
+    position: relative;
+  }
+  
+  form{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+  
+  form input,select,textarea{
+    width: 100%;
+    border: none;
+    background-color: rgb(233, 233, 233);
+    height: 30px;
+    border-radius: 4px;
+    padding: 5px;
+  }
+  
+  form button{
+    border: none;
+    color:white;
+    background-color: rgb(20, 96, 167);
+    border-radius: 5px;
+    height: 30px;
+  }
+   
+
+  
+  @media screen and (max-width:853px){
+    .registForm{
+      width:60%;
+      padding-left: unset;
+      padding-right: unset;
+    }
+  
+    .home h1{
+      font-size: 15px;
+    }
+  
+    .registForm h1{
+      margin-bottom : -10px;
+      font-size: 15px;
+    }
+  
+    .registForm h4{
+      margin-bottom : 10px;
+      font-size: 15px;
+    }
+  
+    .logo img{
+      height: 50px;
+    }
+  
+    table{
+      width: 100%;
+    }
+  
+  }
+  
+  @media screen and (max-width:550px){
+    .registForm{
+      width:80%;
+    }
+
+    .registForm h1{
+        margin-bottom : -10px;
+        font-size: 15px;
+      }
+  
+    .registForm td{
+      font-size: 12px;
+    } 
+  
+    input,select,textarea{
+      width: 90%;
+    }
+  }
+  
+  
+  @media screen and (max-width:370px){
+    .registForm{
+      width:90%; 
+      padding-left: unset;
+      padding-right: unset;
+    }
+  
+    tr td:first-child{
+      display: none;
+    }
+
+   
+    
+   
+  }

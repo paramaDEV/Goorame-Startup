@@ -1,5 +1,4 @@
 <?php
-
 require 'Functions.php';
 
 if($conn->db->connect_error){
@@ -9,8 +8,6 @@ if($conn->db->connect_error){
 if(isset($_POST["submit"])){
     $conn->daftarUser($_POST);
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +38,7 @@ if(isset($_POST["submit"])){
                 <table border="0" cellspacing="30" style="position:relative;">
                     <tr>
                         <td>Nama </td>
-                        <td><input type="text" name="nama" required></td>
+                        <td><input type="text" name="nama" placeholder="nama lengkap" required></td>
                     </tr>
                     <tr>
                         <td>Tanggal Lahir</td>
@@ -56,27 +53,23 @@ if(isset($_POST["submit"])){
                     </tr>
                     <tr>
                         <td>No Telepon</td>
-                        <td><input type="text" name="telp" required></td>
+                        <td><input type="text" name="telp" placeholder="nomer telepon" required></td>
                     </tr>
                     <tr>
                         <td>Alamat</td>
-                        <td><textarea name="alamat" required></textarea></td>
+                        <td><textarea name="alamat" placeholder="alamat" required></textarea></td>
                     </tr>
                     <tr>
                         <td>Email</td>
-                        <td><input type="email" name="email" required></td>
+                        <td><input type="email" name="email" placeholder="email" required></td>
                     </tr>
                     <tr>
                         <td>Username</td>
-                        <td><input type="text" name="username" required autocomplete="off"></td>
+                        <td><input type="text" name="username" placeholder="username" required autocomplete="off"></td>
                     </tr>
                     <tr>
                         <td>Password</td>
-                        <td><input type="password" name="password"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" style="height: 15px;" required></td>
-                        <td><span style="float: left;display: inline;font-family: 'Raleway',sans-serif;font-size: 15px;">Saya menerima segala ketentuan dan kebijakan</span></td>
+                        <td><input type="password" placeholder="password" name="password"></td>
                     </tr>
                 </table>
                 <center><button type="submit" name="submit" style="width:40%">Daftar</button></center>

@@ -37,7 +37,7 @@ $bintang=$data[0]["bintang"];
         <center><img class="profile" src="../mitraimage/<?=$conn->cekGambar($data[0]['profile']);?>" width="100px" height="100px" style="margin-top: 20px;border-radius:50%;"></center>
         <center><h4 style="color:white;font-family:'Roboto',sans-serif">Lorem Ipsum</h4></center>
         <center><?php $conn->showStar($bintang)?></center>
-        <div class="menu" style="margin-top:100px;">
+        <div class="menu" >
             <a href="homeMitra.php"><img src="../assets/home.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Beranda</h4></a>
             <a href="pesanan.php"><img src="../assets/keranjang.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Pesanan<span style="position:absolute;"><?=$conn->hitungPesanan($idmitra)?></h4></a>
             <a href=""><img src="../assets/riwayat.png" height="25" style="float: left;margin: 10px;margin-top:5px;margin-right: 20px;"><h4>Riwayat</h4></a>
