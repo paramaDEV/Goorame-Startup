@@ -443,9 +443,9 @@ class Functions{
         $mail->Host="smtp.gmail.com";
         $mail->Port=587;
         $mail->isHTML();
-        $mail->Username="admaja404@gmail.com";
-        $mail->Password="powerrangers404";
-        $mail->setFrom("admaja404@gmail.com");
+        $mail->Username="";
+        $mail->Password="";
+        $mail->setFrom("");
         $mail->Subject="Pesanan Baru";
         $mail->Body="<b><h1>Anda mendapatkan pesanan baru.</h1></b>
                     <br>
@@ -470,9 +470,9 @@ class Functions{
                 $mail->Host="smtp.gmail.com";
                 $mail->Port=587;
                 $mail->isHTML();
-                $mail->Username="admaja404@gmail.com";
-                $mail->Password="powerrangers404";
-                $mail->setFrom("admaja404@gmail.com");
+                $mail->Username="";
+                $mail->Password="";
+                $mail->setFrom("");
                 $mail->Subject="Checkout";
                 $mail->Body="<b><h1>Pesanan anda sedang di proses.</h1></b>
                             Mohon tunggu beberapa saat. Kurir akan mengirimkan pesanan Anda dengan segera.
