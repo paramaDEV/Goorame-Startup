@@ -1,0 +1,481 @@
+body{
+    margin:0;
+    padding:0;
+    background-image: linear-gradient(to left, #00c6fb 0%, rgb(18, 100, 207) 100%);
+    overflow-x: hidden;
+}
+nav{
+    color: white;
+    height:60px;
+    background-color: rgb(10, 87, 187);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    top:0;
+    right : 0;
+    left : 0;
+    z-index: 99;
+}
+.hamburger{
+    cursor: pointer;
+    display: none;
+}
+.logo{
+    margin-left: 20px; 
+    font-family: sans-serif;
+}
+
+.logo img{
+    margin-top:15px;
+    margin-bottom:15px;
+    height:60px;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content:space-between;
+    flex-direction: row;
+    width : 430px;
+    margin-right: 20px;
+    line-height: 38px;
+    font-family: 'Roboto',sans-serif;
+    font-size: 18px;
+}
+
+nav ul a:link{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+nav ul a:visited{                                                                                                                                                    
+    color: rgb(255, 255, 255);
+}
+
+nav ul a:hover{
+    border-bottom: 4px solid rgb(199, 123, 23);
+}
+
+h1{
+   font-family:'Roboto',sans-serif;
+   font-size:30px;
+   margin-top: 20px;
+}
+
+.sectionA{
+    height : 40vw;
+    margin-top : 70px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.textBox {
+    width:40%;
+    height: 60%;
+}
+
+.textBox h1{
+    font-family:'Roboto', sans-serif;
+    font-size:4vw;
+    line-height: 30px;
+}
+
+.textBox h3{
+    font-family: 'Raleway',sans-serif;
+    font-size: 1.5vw;line-height:100%
+}
+
+.imgBox{
+    width:56%;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.imgBox img{
+    height: auto;
+    width: 100%;
+}
+
+ .btn{
+    transition:0.5s;
+    border: none;
+    color: white;
+    background-color: rgb(228, 148, 44);
+    width: 240px;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+.btn:hover{
+    transition:0.5s;
+    width: 270px;
+    height: 60px;
+}
+
+.sectionB{
+    padding: 20px;
+    line-height: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    height : 250px;
+    background-color: rgba(14, 93, 196,0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionB h3{
+    font-size:20px;
+    font-family:'Raleway', sans-serif;
+}
+
+.sectionC{
+    padding-top: 30px;
+    padding-bottom: 50px;
+    display: flex;flex-direction: column;
+    color: white;
+}
+
+.sectionC .wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.sectionC .wrap .box{
+    transition: 0.7s;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width : 20vw;
+    font-family: sans-serif;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    margin:10px;
+    color: rgb(72, 75, 77);
+    box-shadow: 3px 3px 10px rgb(18, 90, 119);
+}
+
+.sectionC .wrap .box img{
+    height : 70%;
+}
+
+.sectionC .wrap .box h3{
+    font-size: 15px;
+}
+.sectionC .wrap .box:hover{
+    position: relative;
+    transition: 0.7s;
+    top: -20px;
+}
+
+
+.sectionD{
+    padding-top: 30px;
+    padding-bottom: 60px;
+    background-color: rgba(14, 93, 196,0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionD .wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.sectionD .wrap .box{
+    width:400px;
+    height: 150px;
+    margin : 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.sectionD .wrap .box img{
+    margin-top: 20px;
+    border-radius: 50%;
+    height:130px;
+}
+
+.sectionD .wrap .box h1,p{
+    font-family: sans-serif;
+    margin-left: 20px;
+}
+
+.sectionE{
+    padding: 30px;
+    background-color: rgb(10, 87, 187);
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.sectionE img{
+    height :150px;
+}
+
+.sectionE h1,h3{
+    font-family: sans-serif;
+}
+:target{
+    transition: 0.5s;
+}
+
+@media  screen and (max-width:769px){
+    .textBox{
+        padding-left: 20px;
+        box-sizing: border-box;
+        height: 80%;
+    }
+
+    .imgBox{
+        width: 60%;
+    }
+
+    .sectionB{
+        height: 34vw;
+        padding-top : 15px;
+    }
+    .sectionB h3{
+        font-size:15px;
+        font-family:'Raleway', sans-serif;
+    }
+    .sectionC .wrap .box h3{
+        font-size: 12px;
+    }
+
+    .sectionC .wrap .box{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 280px;
+        padding-bottom: 10px;
+        width : 200px;
+    }
+
+    .sectionC .wrap .box img{
+        height : 70%;
+    }
+
+    nav{
+        height:45px;
+    }
+
+    .logo img{
+        margin-top:15px;
+        margin-bottom:15px;
+        height:40px;
+    }
+
+    nav ul{
+        width : 300px;
+        font-size: 12px;
+    }
+
+    .btn{
+        transition:0.5s;
+        border: none;
+        color: white;
+        background-color: rgb(228, 148, 44);
+        width: 120px;
+        height: 30px;
+        border-radius: 20px;
+        font-size: 12px;
+        margin-top:0px;
+    }
+    
+    .btn:hover{
+        transition:0.5s;
+        width: 140px;
+        height: 40px;
+    }
+
+    .sectionD .wrap{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    
+    .sectionD .wrap .box{
+        width:250px;
+        height: 100px;
+        margin : 10px;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .sectionD .wrap .box img{
+        margin-top: 20px;
+        border-radius: 50%;
+        height : 60px;
+    }
+    
+    .sectionD .wrap .box h1{
+        font-family: sans-serif;
+        margin-left: 12px;
+        font-size: 15px;
+    }
+    .sectionD .wrap .box p{
+        font-family: sans-serif;
+        margin-left: 12px;
+        font-size: 12px;
+    }
+
+    .sectionE{
+        padding: 10px;
+        background-color: rgb(10, 87, 187);
+        display: flex;
+        flex-direction: column;
+        color: white;
+    }
+
+    .sectionE h3{
+        font-size: 12px;
+    }
+
+    
+    .sectionE img{
+        height :100px;
+    }
+
+}
+
+@media screen and (max-width:627px){
+
+        nav{
+            height: 35px;
+        }
+
+        .logo img{
+            margin-top:15px;
+            margin-bottom:15px;
+            height:35px;
+        }
+
+        .sectionA{
+            padding-top:10px;
+        }
+        h1{
+            font-size:15px;
+            margin-top: 10px;
+        }
+
+     .textBox{
+         display: flex;
+         align-items: center;
+         flex-direction: column;
+         margin-top: -20px;
+         height: 40%;
+         width : 100%;
+         justify-content: center;
+         position: absolute;
+         z-index: 9;
+        
+     }
+
+     .imgBox img{
+         width : 80%;
+         opacity: 0.18;
+     }
+
+     .textBox .btn{
+         margin-top: 20px;
+     }
+
+     .textBox h1{
+        font-family:'Roboto', sans-serif;
+        font-size: 6vw;
+        line-height: 5px;
+    }
+    
+    .textBox h3{
+        font-family: 'Raleway',sans-serif;
+        line-height: 10px;
+        font-size: 2.5vw;line-height:100%
+    }
+
+    .sectionB{
+        height: unset;
+        padding-bottom: 20px;
+    }
+
+    .sectionB h3{
+        font-size:2vw;
+        font-family:'Raleway', sans-serif;
+    }
+
+    .sectionC .wrap .box{
+        height : 35vw;
+       
+    }
+
+    .sectionD .btn{
+        margin-top: 0px;
+    }
+
+    nav ul{
+        background-color: rgba(14, 42, 104,0.97);
+        width: 100%;
+        top : 20px;
+        position: absolute;
+        left: -34px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        height: 0px;
+        transition: 0.3s;
+    }
+   
+    .active{
+        transition: 0.3s;
+        height: 200px;
+    }
+    .hamburger{
+        display: block;
+        margin-right: 20px;
+    }
+
+}
+
+@media screen and (max-width:400px){
+    .sectionB{
+        height: unset;
+    }
+
+    .sectionB h1{
+        margin-bottom: -10px;
+    }
+
+    .sectionB h3{
+        font-size:3vw;
+        font-family:'Raleway', sans-serif;
+    }
+
+
+    .sectionC .wrap .box{
+        height : 200px;
+    }
+
+    .sectionD .wrap .box{
+        width:250px;
+        height: unset;
+    }
+}
+
